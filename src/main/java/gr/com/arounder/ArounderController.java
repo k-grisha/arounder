@@ -32,10 +32,14 @@ public class ArounderController implements ArounderCloud {
     }
 
     @Override
-    public int hash(String value) {
+    public int hash(@PathVariable String value){
         LOGGER.warn("start hash calc for '{}'", value);
-        Uninterruptibles.sleepUninterruptibly(1000, TimeUnit.MILLISECONDS);
-        LOGGER.warn("hash calc for '{}' finish ", value);
+        try {
+            Thread.sleep(1001);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        LOGGER.warn("finish hash calc for '{}'  ", value);
         return value.hashCode();
     }
 

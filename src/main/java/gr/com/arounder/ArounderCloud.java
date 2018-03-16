@@ -14,6 +14,6 @@ public interface ArounderCloud {
     @GetMapping("/hash/{value}")
     int hash(@PathVariable("value") String value);
 
-    @GetMapping("/fuck/")
+    @GetMapping("/fuck")
     int fuck();
 }
