@@ -1,9 +1,9 @@
 server:
-  port: 8089
+  port: 0
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://${DISCOVERY_HOST:localhost}:${DISCOVERY_PORT:8761}/eureka
+      defaultZone: ${DISCOVERY_HOST:http://proga.pw:8761/eureka}
   instance:
     preferIpAddress: true
 management:
@@ -11,3 +11,7 @@ management:
     enabled: ${actuator.protected:true}
 
 spring.zipkin.baseUrl: http://GR-ZIPKIN/
+spring:
+  sleuth:
+    sampler:
+      percentage: 1
